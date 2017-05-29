@@ -1,0 +1,102 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "jtaro-module",
+        "scope": null,
+        "escapedName": "jtaro-module",
+        "name": "jtaro-module",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "D:\\app"
+    ]
+  ],
+  "_cnpm_publish_time": 1494397638285,
+  "_from": "jtaro-module@latest",
+  "_id": "jtaro-module@0.2.4",
+  "_inCache": true,
+  "_location": "/jtaro-module",
+  "_nodeVersion": "7.0.0",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/jtaro-module-0.2.4.tgz_1494397636501_0.18952461681328714"
+  },
+  "_npmUser": {
+    "name": "chjtx",
+    "email": "1419328765@qq.com"
+  },
+  "_npmVersion": "3.10.9",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "jtaro-module",
+    "scope": null,
+    "escapedName": "jtaro-module",
+    "name": "jtaro-module",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npm.taobao.org/jtaro-module/download/jtaro-module-0.2.4.tgz",
+  "_shasum": "a89d662b8949b544714359d72a41f8add1216ac9",
+  "_shrinkwrap": null,
+  "_spec": "jtaro-module",
+  "_where": "D:\\app",
+  "author": {
+    "name": "BarZu"
+  },
+  "bugs": {
+    "url": "https://github.com/chjtx/JTaro-Module/issues"
+  },
+  "dependencies": {},
+  "description": "Explain the ES6 module to Es5 syntax",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.0",
+    "eslint": "^3.9.1",
+    "eslint-config-vue": "^2.0.0",
+    "eslint-plugin-vue": "^1.0.0",
+    "rollup": "^0.38.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-jtaro-module": "0.0.2",
+    "rollup-plugin-paths": "0.0.1"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "a89d662b8949b544714359d72a41f8add1216ac9",
+    "size": 11967,
+    "noattachment": false,
+    "tarball": "http://registry.npm.taobao.org/jtaro-module/download/jtaro-module-0.2.4.tgz"
+  },
+  "gitHead": "1ae37a1686d49b4e7e6eab25c377d378ec8e5e6a",
+  "homepage": "https://github.com/chjtx/JTaro-Module#readme",
+  "keywords": [
+    "jtaro-module"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "maintainers": [
+    {
+      "name": "chjtx",
+      "email": "1419328765@qq.com"
+    }
+  ],
+  "name": "jtaro-module",
+  "optionalDependencies": {},
+  "publish_time": 1494397638285,
+  "readme": "# JTaro Module\n\nJTaro Module是一款使用ES6模块语法的前端模块管理工具，其本身是为更好地服务JTaro而设计，但并不依赖JTaro，完全可以独立运行。\n\n## 前言\n\n- 如果你想使用ES6模块语法管理代码，又不想使用webpack这个重型工具\n- 如果你只是想简简单单的写个js、html、css，不需要typescript、postcss等高级工具\n- 如果你想开发时所见到的错误就像使用script标签引入的脚本一样清晰\n- 如果你想上线代码只打包成一个或几个文件以减少文件体积和连接数\n\n那么，你可以继续往下读了！\n\n## 特点\n\n- 轻盈易用，几个文件，数百行代码，只需要开启其nodejs服务即可使用ES6模块语法编写代码，无需Babel转译\n- 方便排错，浏览器展示代码与本地js文件一一对应，错误行号一目了然\n- 低耗高能，只需要安装nodejs 6以上版本即可运行，在3000元windows机上跑也是扛扛的\n- 代码精简，上线代码使用Rollup.js打包，除寥寥几行用于处理样式的代码外，不带任何模块管理的代码\n\n## 示例\n\n[运行示例](https://github.com/chjtx/JTaro-Module/tree/master/demos)\n\n## 开始使用\n\n### 开发模式\n\n1. 安装`npm install -D jtaro-module`\n2. 在自己的项目目录里使用命令行（终端）运行`node node_modules/jtaro-module/src/server.js`，开启本地静态文件服务，默认为3000端口，可自定义端口`node node_modules/jtaro-module/src/server.js 3030`\n3. 在index.html的head引入`node_modules/jtaro-module/src/client.js`，在body最后引入入口文件（只要是js文件都可当作入口文件），JTaro Module将会从入口文件开始加载所有依赖文件\n4. 在浏览器上运行`localhost:3000/index.html`，所有js文件都会被拦截，所有符合条件的import/export将会被转换\n\n建议使用[Visual Studio Code](https://code.visualstudio.com/)进行开发，可直接在编辑器开启nodejs服务\n\n### 上线模式\n\n1. 安装rollup、引入`rollup-plugin-jtaro-module`添加到rollup的插件里，打包入口文件\n2. 拷贝index.html到build/并删除拷贝的index.html里的`node_modules/jtaro-module/src/client.js`\n3. `node build.js`\n\n与Rollup.js更多相关内容不在本页范围内，请自行谷歌/百度。\n\nbuild.js大概代码长这样\n\n```js\nvar rollup = require('rollup')\nvar path = require('path')\nvar jtaroModule = require('rollup-plugin-jtaro-module')\n\nrollup.rollup({\n  entry: path.resolve('demos/main.js'),\n  plugins: [jtaroModule({ root: 'demos' })]\n}).then(function (bundle) {\n  bundle.write({\n    format: 'iife',\n    dest: 'build/main.js'\n  })\n})\n```\n\n## JTaro Module 运行原理\n\n### 处理js\n\n本地开启nodejs静态服务，拦截所有js文件，检测文件内容，将import/export解释成ES5可执行的方法，再返回给浏览器\n\n例：\n\n```js\n// main.js\nimport { a } from './a.js'\n\nconsole.log(a)\n\nexport default {\n  a: a\n}\n```\n\n浏览器接收到的内容为：\n\n```js\n(function (f) {\n  JTaroAssets['/main.js'] = 1\n  var g = {count:1}\n  g.callback = function () { f.apply(null, [\n    JTaroModules['/a.js'].default\n  ]) }\n  JTaroLoader.import('./a.js', g)\n})(function (a) {\n// main.js\n\nconsole.log(a)\n\nJTaroModules['/main.js'].default = {\n  a: a\n}\n})\n```\n\n### 处理html\n\n当引入的文件为html时，JTaro Module会将html里的style在head里生成样式表，其余内容以字符串形式返回。JTaro是基于Vue开发的，因此JTaro Module的html内容也应该遵循Vue的模板规则，最外层只有一个dom元素。另外，html文件里只允许一个style标签\n\n推荐\n\n```html\n<style>\nbody {}\n</style>\n<div>\n  <p>最外层只有一个div</p>\n</div>\n```\n\n不推荐\n\n```html\n<style>\nbody {}\n</style>\n<div>\n  <p>最外层只有一个div</p>\n</div>\n<div>\n  我是最外层的第二个div\n</div>\n```\n\nJTaro Module会将style和div(dom元素)分离，并在第一个div加上与style对应的标识，以达到作用域限定的目的。如果你要给第一个div加样式，只需要在`{}`里写样式，前面不需要任何选择器。如果某些编辑器对`{}`发出警告，看着不爽，可以这样写`this {}`，this表示第一个div\n\n像这样子\n\na.html\n\n```html\n<style>\nh1 {font-size:32px;}\n{background: #ddd;} /* 给顶层div加样式 */\nthis {background: #ddd;} /* 给顶层div加样式，防止编辑器发出警告 */\nthis.abc {color: #333;}\nthis#efg {float: left;}\n</style>\n<div class=\"abc\" id=\"efg\">\n  <h1>Hello JTaro Module</h1>\n</div>\n```\n\na.js\n\n```js\nimport a from './a.html'\ndocument.body.innerHTML = a\n```\n\n运行结果\n\n```html\n<html>\n  <head>\n    <style id=\"jtaro_style_a\">\n    [jtaro_a] h1 {font-size:32px;}\n    [jtaro_a] {background: #ddd;}\n    [jtaro_a].abc {color: #333;}\n    [jtaro_a]#efg {float: left;}\n    </style>\n  </head>\n  <body>\n    <div jtaro_a class=\"abc\" id=\"efg\">\n      <h1>Hello JTaro Module</h1>\n    </div>\n  </body>\n</html>\n```\n\n### 处理css\n\n直接将css文件的内容以style标签的形式在head创建，不会额外加任何标记\n\n## 注意事项\n\n- 目前只在chrome浏览器通过测试，而且将来也不太可能会去兼容其它浏览器。是的，没看错，对非chrome浏览器不做兼容。上线部署的时候将会移除几乎所有JTaro Module的代码，因此，只需要保证在chrome浏览器上开发不出问题就够了\n- 所有import的路径都是相对当前文件的，除非使用`rollup-plugin-paths`插件，JTaro Module会自动根据当前文件查找目标文件\n- a.js引入b.js，b.js引入a.js这类循环引入不会重复加载，但代码可能不会按预期的那样执行\n- import/export必须独立成行，即同一行不能出现两个import/export\n- import的文件必须加后缀，目前只支持js/html/css三种后缀文件\n- 入口文件不应该有export\n- 除以下5种import、5种export语法外的ES6模块语法都不会被解释到，例：不支持`export * from '../abc.js'`\n\n## 支持import的5种语法\n\n```js\n// 1、花括号变量\nimport { a } from './**.js'\nimport { a, b, c } from './**.js'\n\n// 2、花括号别名\nimport { a as apple } from './**.js'\nimport { a as apple, b as banana } from './**.js'\n\n// 3、默认值赋给变量，相当于`import { default as a } from './**.js'`\nimport a from './**.js'\n\n// 4、只引入并运行（适用于非ES6模块且有在window域暴露变量的库）\nimport './**.js'\n\n// 5、获取所有值并赋给变量\nimport * as a from './**.js'\n```\n\n## 支持export的5种语法\n\n```js\n// 1、var声明（请不要使用let/const声明，ES5不认）\nexport var a = 'xxx'\n\n// 2、花括号变量\nvar a = 1, b = 2, c = 3\nexport { a, b, c }\n\n// 3、花括号别名\nexport { a as apple, b as banana }\n\n// 4、导出函数\nexport function a () {\n  ...\n}\n\n// 5、导出默认值\nexport default { a: 1 }\n ```\n\n## rollup-plugin-jtaro-module\n\n[rollup-plugin-jtaro-module](https://github.com/chjtx/rollup-plugin-jtaro-module) Rollup的JTaro Module插件，使Rollup支持引入html和css，上线打包时使用\n\n| 选项 | 默认值 | 说明 |\n|:----:|:----:|:----|\n| root | 当前工作目录 | 批定站点根目录，填入相对于工程目录的路径，让JTaro Module能正确处理文件路径 |\n\n## 使用rollup的插件\n\n- 与 JTaro Module 源码`server.js`同一目录创建`jtaro.module.config.js`文件\n- 或者在开启服务时指定配置文件`node server.js --config=./jtaro.other.config.js`\n- `--config`选项后面跟的路径是相对`server.js`的，请用`./`或`../`开头\n- 配置该文件后，即可使用rollup的插件对文件进行处理，如使用`rollup-plugin-paths`进行别名修改，`rollup-plugin-babel`进行ES6语法转换等\n\n目前已测试通过的rollup插件：\n\n- [rollup-plugin-paths](https://github.com/chjtx/rollup-plugin-paths) 可在不同目录层级下使用相同变量的路径\n- [rollup-plugin-babel](https://github.com/rollup/rollup-plugin-babel) 将ES6语法转换成ES5\n\n```\nnpm i -D rollup-plugin-paths rollup-plugin-babel babel-preset-es2015\n```\n\n```js\n// jtaro.module.config.js\nvar alias = require('rollup-plugin-paths')\nvar babel = require('rollup-plugin-babel')\n\nmodule.exports = {\n  website: '../', // 站点目录，以server.js所在路径为基准\n  entry: '../demos/main.js', // 入口文件，以server.js所在路径为基准\n  plugins: [alias({\n    jquery: './vendors/jquery-2.2.3.min.js' // 以入口文件所在路径为基准\n  }, babel({\n    include: '**/a.js', //该路径相对于entry（入口文件）\n    'presets': [\n      [\n        'es2015',\n        {\n          'modules': false\n        }\n      ]\n    ]\n  })]\n}\n```\n\n**注意**\n\n- 若要使用`rollup-plugin-babel`必须安装`babel-preset-es2015`\n- 强烈建议配置babel的`include`选项，否则每个js都会被编译，非常慢\n\n## 参考\n\n- [ECMAScript 6 入门 - 阮一峰](http://es6.ruanyifeng.com/#docs/module)\n- [用NodeJS打造你的静态文件服务器](https://cnodejs.org/topic/4f16442ccae1f4aa27001071)\n- [Rollup.js官网](http://rollupjs.org/)\n\n## 后语\n\nJTaro Module只能用于解决js/html/css的模块化，与webpack相比，简直是弱到爆。JTaro Module之所以存在，是因为webpack太过于强大，以至新手根本无法接近，随便抛一个错误足可让我等渣渣通宵达旦。JTaro Module每个文件都与真实文件对应，所有浏览器可捕捉的错误都显而易见，也许错误行号与原文件对不上，`ctrl/cmd + f`搜索一下就很轻易搜到错误源头。webpack是把牛刀，JTaro Module只是用来削水果的，合不合用就要使用者们自己度量了。\n\n那么为什么要造轮子？\n\n- 新人入项，总要安装一大堆脚本工具，npm安装则网络受限，cnpm安装则依赖缺失\n- 公司预算约束，不可能给每位开发者提供mac设备，在3000元windows机上运行webpack等开发环境备受挑战\n- webpack学习成本较高，出现问题处理成本更高，并非新手所能驾驭\n- 经webpack处理过的脚本，并不能很直观的反映出是哪段业务代码报的错误，增加开发成本\n- .vue文件将html、js、css合在一起适合编写单个组件，对于业务逻辑较多的文件应将html、css和js分离\n- 工具应该用于解放劳动力，而不应该因维护工具而适得其反\n\n## License\n\nMIT\n\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chjtx/JTaro-Module.git"
+  },
+  "scripts": {
+    "config": "node src/server.js --config=./jtaro.module.config2.js",
+    "default": "node src/server.js"
+  },
+  "version": "0.2.4"
+}
