@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <title>App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, user-scalable=0">
+    <title>JTaro UI</title>
+    <link rel="stylesheet" href="./vendors/jtaro-ui/jtaro-ui.css">
+    <link rel="stylesheet" href="./vendors/jtaro-ui/jtaro-ui-iconfont.css">
+    <link rel="stylesheet" id="jtaro_ui_theme" href="./vendors/jtaro-ui/jtaro-ui-theme-my.css">
+    <link rel="stylesheet" href="./assets/fonts/iconfont.css">
+    <script src="./jtaro-module/src/client.js"></script>
+    <script src="./vendors/vue.js"></script>
+    <script src="./vendors/jroll.js"></script>
+    <script src="./vendors/jtaro-ui/jtaro-ui.js"></script>
 </head>
 <body>
- Hello World
+    <div id="jtaro_app"></div>
+    <script src="./vendors/jtaro.js"></script>
+    <script>
+       Vue.use(JTaro, {
+           default: 'pages/home'
+       })
+    </script>
 </body>
 </html>

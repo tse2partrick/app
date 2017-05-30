@@ -1,0 +1,99 @@
+<style>
+  this {
+    display: inline-block;
+    position: relative;
+    height: 24px;
+    line-height: 24px;
+  }
+  .j-switch-bar {
+    float: left;
+    height: 14px;
+    width: 36px;
+    border-radius: 14px;
+    position: relative;
+    top: 5px;
+    background: #bdbdbd;
+  }
+  .j-switch-ring {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    left: 0;
+    top: -3px;
+    background: #f5f5f5;
+    -webkit-box-shadow: 0 1px 6px rgba(0,0,0,.1), 0 1px 4px rgba(0,0,0,.1);
+    box-shadow: 0 1px 6px rgba(0,0,0,.1), 0 1px 4px rgba(0,0,0,.1);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    -webkit-transition: -webkit-transform 400ms, background 400ms;
+    transition: transform 400ms, background 400ms;
+  }
+  .j-switch-left {
+    float: left;
+    margin-right: 8px;
+  }
+  .j-switch-right {
+    float: right;
+    margin-left: 8px;
+  }
+  .j-switch-on {
+    -webkit-transform: translateX(16px);
+    transform: translateX(16px);
+  }
+  .j-switch-ripple {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background: rgba(0, 0, 0, .05);
+    left: -10px;
+    top: -10px;
+    border-radius: 40px;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-animation:j-switch-animation 600ms;
+    animation:j-switch-animation 600ms;
+  }
+  .j-switch-hidden {
+    display: none;
+  }
+  .j-switch-disabled {
+    color: #c3cbd6;
+  }
+  @-webkit-keyframes j-switch-animation {
+    0% {
+      -webkit-transform: scale(0);
+    }
+    50% {
+      -webkit-transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: scale(1);
+      opacity: 0;
+    }
+  }
+  @keyframes j-switch-animation {
+    0% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
+</style>
+<div @click="switchValue">
+  <div class="j-switch-hidden j-bg-primary" ref="bgColor"></div>
+  <div class="j-switch-bar" :class="barObject">
+    <div class="j-switch-ring" ref="ring" :class="ringObject">
+    </div>
+  </div>
+  <span :class="labelObject">{{ label }}</span>
+</div>

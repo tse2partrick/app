@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "cd dev && node jtaro-module/server.js"
+    "dev": "cd dev && node jtaro-module/src/server.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
     "eslint": "^3.19.0",
     "eslint-config-vue": "^2.0.2",
     "eslint-plugin-vue": "^2.0.1",
+    "jroll": "^2.4.10",
     "jtaro-bundle": "^0.2.5",
     "jtaro-module": "^0.2.4"
   }

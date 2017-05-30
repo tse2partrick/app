@@ -1,0 +1,43 @@
+<style>
+  .icon-back,
+  .icon-more{
+    line-height: 44px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+  }
+  .detail-body h1{
+    font-size: 16px;
+    text-align: center;
+    padding: 10px;
+  }
+  .content{
+    padding: 10px;
+  }
+  .content p{
+    text-indent: 2em;
+  }
+  .time {
+    padding-left: 10px;
+    font-size: 12px;
+    color: #666;
+  }
+  .detail-body{
+    top:45px;
+    bottom:45px;
+  }
+</style>
+
+<div>
+  <j-appbar>
+    <j-button slot='left' height='34' @action="goBack"><i class='iconfont icon-back' /></j-button>
+    <j-button slot='right' height='34'><i class='iconfont icon-more' /></j-button>
+  </j-appbar>
+
+  <j-body class='detail-body' ref='jbody'>
+    <h1>{{detail.title}}</h1>
+    <p class='time'>{{detail.time}}</p>
+    <div class='content' v-html='detail.content'></div>
+  </j-body>
+
+  <myFooter></myFooter>
+</div>

@@ -1,0 +1,43 @@
+<style>
+    .list{
+        position: absolute;
+        top:44px;
+        left:0;
+        bottom:0;
+        width:100%;
+    }
+    .item{
+        height:90px;
+        border-bottom: 1px solid #eee;
+    }
+    .item img{
+        width:104px;
+        height:74px;
+        float: right;
+        margin: 8px 8px 0 8px;
+    }
+    .item p{
+        padding:8px 0 0 8px;
+    }
+    .item p.comment{
+        color: #666;
+        font-size: 12px;
+        margin-top: 4px;
+    }
+    .jroll-infinite-tip{
+        height:44px;
+        line-height: 44px;
+        text-align: center;
+        color:#666;
+    }
+</style>
+<div>
+    <j-appbar title="资讯" />
+    <jroll-infinite class='list'>
+        <div class='item' v-for='item in items' @click='gotoDetail(item.id)'>
+            <img :src="item.img">
+            <p>{{ item.title }}</p>
+            <p class='comment'>{{ item.comment }}评</p>
+        </div>
+    </jroll-infinite>
+</div>

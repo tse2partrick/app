@@ -1,0 +1,33 @@
+<style>
+this {
+  height: 44px;
+  line-height: 44px;
+  text-align: center;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.appbar-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  padding-left: 5px;
+}
+.appbar-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  padding-right: 5px;
+}
+</style>
+<div class="j-bg-primary j-font-primary">
+  <div class="appbar-left">
+    <slot name="left"></slot>
+  </div>
+  <div>{{ title }}</div>
+  <div class="appbar-right">
+    <slot name="right"></slot>
+  </div>
+</div>
